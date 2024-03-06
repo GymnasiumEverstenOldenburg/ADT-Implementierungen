@@ -1,17 +1,21 @@
 /**
- * Implementierung der Klasse DynArray nach den Vorgaben des KC's der gymnasialen Oberstufe (Niedersachsen)
- * @author Yannick Weigert (GitHub: @GelbEinhalb, email: yannick@gelbeinhalb.com)
- * @author Alexander Reimer (GitHub: @Alexander-Reimer, email: alexander.reimer2357@gmail.com)
- * @version 21.02.2024
+ * Implementierung der Klasse DynArray nach den Vorgaben des KC's der
+ * gymnasialen Oberstufe (Niedersachsen).
+ * 
+ * @author Yannick Weigert (GitHub: GelbEinhalb, email:
+ *         yannick@gelbeinhalb.com)
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
+ *         alexander.reimer2357@gmail.com)
+ * @version 06.03.2024
  */
 public class DynArray<Type> {
 
-    public static class Item<Type>{
+    public static class Item<Type> {
 
         private Item<Type> next;
         private Type content;
 
-        public Item(Type content){
+        public Item(Type content) {
             setContent(content);
         }
 
@@ -40,12 +44,14 @@ public class DynArray<Type> {
     /**
      * Eine leere dynamische Reihung wird angelegt.
      */
-    public DynArray(){
+    public DynArray() {
         // Hier passiert nichts
     }
 
     /**
-     * Traversiere das DynArray bis zum index und gib das entsprechende Item-Objekt zurück.
+     * Traversiere das DynArray bis zum index und gib das entsprechende Item-Objekt
+     * zurück.
+     * 
      * @param index (beginnend bei 0)
      * @return Item des DynArrays mit ggb. index.
      */
@@ -61,28 +67,33 @@ public class DynArray<Type> {
     }
 
     /**
-     * Wenn die dynamische Reihung kein Element enthält, wird der Wert wahr zurückgegeben, sonst der
+     * Wenn die dynamische Reihung kein Element enthält, wird der Wert wahr
+     * zurückgegeben, sonst der
      * Wert falsch.
+     * 
      * @return Ob die Reihung Elemente enthält.
      */
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return this.first == null;
     }
 
     /**
      * Der Inhalt des Elements an der Position index wird zurückgegeben.
+     * 
      * @param index Der Index des Elements.
      * @return Inhalt des Elements an der Position index.
      */
-    public Type getItem(int index){
+    public Type getItem(int index) {
         return getItemClass(index).getContent();
     }
 
     /**
-     * Ein neues Element mit dem übergebenen Inhalt wird am Ende der dynamischen Reihung angefügt.
+     * Ein neues Element mit dem übergebenen Inhalt wird am Ende der dynamischen
+     * Reihung angefügt.
+     * 
      * @param inhalt Das Element, das hinzugefügt wird.
      */
-    public void append(Type inhalt){
+    public void append(Type inhalt) {
         this.length++;
 
         if (this.isEmpty()) {
@@ -95,15 +106,19 @@ public class DynArray<Type> {
     }
 
     /**
-     * Ein neues Element mit dem übergebenen Inhalt wird an der Position index in die dynamische Reihung
-     * eingefügt. Das Element, das sich vorher an dieser Position befunden hat, und alle nachfolgenden werden
-     * nach hinten verschoben. Entspricht der Wert von index der Länge der dynamischen Reihung, so wird
+     * Ein neues Element mit dem übergebenen Inhalt wird an der Position index in
+     * die dynamische Reihung
+     * eingefügt. Das Element, das sich vorher an dieser Position befunden hat, und
+     * alle nachfolgenden werden
+     * nach hinten verschoben. Entspricht der Wert von index der Länge der
+     * dynamischen Reihung, so wird
      * ein neues Element am Ende der dynamischen Reihung angefügt.
-     * @param index Der Index an dem das Element eingefügt wird.
+     * 
+     * @param index  Der Index an dem das Element eingefügt wird.
      * @param inhalt Das Element, das eingefügt werden soll.
      */
-    public void insertAt(int index, Type inhalt){
-        Item<Type> previous = getItemClass(index-1);
+    public void insertAt(int index, Type inhalt) {
+        Item<Type> previous = getItemClass(index - 1);
         Item<Type> newItem = new Item<>(inhalt);
 
         newItem.setNext(previous.getNext());
@@ -113,22 +128,26 @@ public class DynArray<Type> {
     }
 
     /**
-     * Der Inhalt des Elementes an der Position index wird durch den übergebenen Inhalt ersetzt.
-     * @param index Der Index an dem das existierende Element ersetzt werden soll.
+     * Der Inhalt des Elementes an der Position index wird durch den übergebenen
+     * Inhalt ersetzt.
+     * 
+     * @param index  Der Index an dem das existierende Element ersetzt werden soll.
      * @param inhalt Das Element, dass das aktuelle Element ersetzten soll.
      */
-    public void setItem(int index, Type inhalt){
+    public void setItem(int index, Type inhalt) {
         Item<Type> current = getItemClass(index);
         current.content = inhalt;
     }
 
     /**
-     * Das Element an der Position index wird entfernt. Alle folgenden Elemente werden um eine Position
+     * Das Element an der Position index wird entfernt. Alle folgenden Elemente
+     * werden um eine Position
      * nach vorne geschoben.
+     * 
      * @param index Der Index an dem das Element gelöscht werden soll.
      */
-    public void delete(int index){
-        Item<Type> previous = getItemClass(index-1);
+    public void delete(int index) {
+        Item<Type> previous = getItemClass(index - 1);
         Item<Type> current = previous.getNext();
         Item<Type> next = current.getNext();
         previous.setNext(next);
@@ -136,9 +155,10 @@ public class DynArray<Type> {
 
     /**
      * Die Anzahl der Elemente der dynamischen Reihung wird zurückgegeben.
+     * 
      * @return Die Länge des DynArrays
      */
-    public int getLength(){
+    public int getLength() {
         return this.length;
     }
 
