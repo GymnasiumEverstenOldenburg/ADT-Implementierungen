@@ -1,11 +1,10 @@
 /**
- * Implementierung der Klasse Queue nach den Vorgaben des KC's der gymnasialen
- * Oberstufe (Niedersachsen).
+ * Implementierung der Klasse Queue nach den Vorgaben des KC's der gymnasialen Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
- *         alexander.reimer2357@gmail.com)
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
  * @version 06.03.2024
+ *
  */
 public class Queue<Type> {
 
