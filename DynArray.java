@@ -103,6 +103,7 @@ public class DynArray<Type> {
         }
 
         this.last.setNext(new Item<>(inhalt));
+        this.last = this.last.getNext();
     }
 
     /**
