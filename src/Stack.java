@@ -1,5 +1,5 @@
 /**
- * Implementierung der Klasse Stack nach den Vorgaben des KC's der gymnasialen Oberstufe (Niedersachsen).
+ * Implementierung der Klasse Stack nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
  * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
