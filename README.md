@@ -12,4 +12,4 @@ Dieses Repository enthält Implementierungen der Abstract Data Types (ADTs) für
 
 ## To-Do
 - [ ] Manuell Testen
-- [ ] Unit Tests erstellen
+- [x] Unit Tests erstellen
