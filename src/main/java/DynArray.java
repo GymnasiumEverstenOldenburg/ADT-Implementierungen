@@ -49,9 +49,8 @@ public class DynArray<Type> {
     }
 
     /**
-     * Traversiere das DynArray bis zum index und gib das entsprechende Item-Objekt
-     * zurück.
-     * 
+     * Traversiere das DynArray bis zum index und gib das entsprechende Item-Objekt zurück.
+     *
      * @param index (beginnend bei 0)
      * @return Item des DynArrays mit ggb. index.
      */
@@ -67,10 +66,8 @@ public class DynArray<Type> {
     }
 
     /**
-     * Wenn die dynamische Reihung kein Element enthält, wird der Wert wahr
-     * zurückgegeben, sonst der
-     * Wert falsch.
-     * 
+     * Wenn die dynamische Reihung kein Element enthält, wird der Wert wahr zurückgegeben, sonst der Wert falsch.
+     *
      * @return Ob die Reihung Elemente enthält.
      */
     public boolean isEmpty() {
@@ -88,9 +85,8 @@ public class DynArray<Type> {
     }
 
     /**
-     * Ein neues Element mit dem übergebenen Inhalt wird am Ende der dynamischen
-     * Reihung angefügt.
-     * 
+     * Ein neues Element mit dem übergebenen Inhalt wird am Ende der dynamischen Reihung angefügt.
+     *
      * @param inhalt Das Element, das hinzugefügt wird.
      */
     public void append(Type inhalt) {
@@ -107,14 +103,11 @@ public class DynArray<Type> {
     }
 
     /**
-     * Ein neues Element mit dem übergebenen Inhalt wird an der Position index in
-     * die dynamische Reihung
-     * eingefügt. Das Element, das sich vorher an dieser Position befunden hat, und
-     * alle nachfolgenden werden
-     * nach hinten verschoben. Entspricht der Wert von index der Länge der
-     * dynamischen Reihung, so wird
-     * ein neues Element am Ende der dynamischen Reihung angefügt.
-     * 
+     * Ein neues Element mit dem übergebenen Inhalt wird an der Position index in die dynamische Reihung eingefügt. Das
+     * Element, das sich vorher an dieser Position befunden hat, und alle nachfolgenden werden nach hinten verschoben.
+     * Entspricht der Wert von index der Länge der dynamischen Reihung, so wird ein neues Element am Ende der
+     * dynamischen Reihung angefügt.
+     *
      * @param index  Der Index an dem das Element eingefügt wird.
      * @param inhalt Das Element, das eingefügt werden soll.
      */
@@ -129,9 +122,8 @@ public class DynArray<Type> {
     }
 
     /**
-     * Der Inhalt des Elementes an der Position index wird durch den übergebenen
-     * Inhalt ersetzt.
-     * 
+     * Der Inhalt des Elementes an der Position index wird durch den übergebenen Inhalt ersetzt.
+     *
      * @param index  Der Index an dem das existierende Element ersetzt werden soll.
      * @param inhalt Das Element, dass das aktuelle Element ersetzten soll.
      */
@@ -141,17 +133,31 @@ public class DynArray<Type> {
     }
 
     /**
-     * Das Element an der Position index wird entfernt. Alle folgenden Elemente
-     * werden um eine Position
-     * nach vorne geschoben.
-     * 
+     * Das Element an der Position index wird entfernt. Alle folgenden Elemente werden um eine Position nach vorne
+     * geschoben.
+     *
      * @param index Der Index an dem das Element gelöscht werden soll.
      */
     public void delete(int index) {
+        if (this.length == 0) {
+            throw new IllegalArgumentException("Die dynamische Reihung ist leer!");
+        }
+        if (index == 0) {
+            if (this.length == 1) {
+                this.first = null;
+                this.last = null;
+                this.length = 0;
+                return;
+            }
+            this.first = this.first.getNext();
+            this.length--;
+            return;
+        }
         Item<Type> previous = getItemClass(index - 1);
         Item<Type> current = previous.getNext();
         Item<Type> next = current.getNext();
         previous.setNext(next);
+        this.length--;
     }
 
     /**
