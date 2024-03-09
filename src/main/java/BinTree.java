@@ -14,12 +14,40 @@ public class BinTree<Type> {
     private BinTree<Type> left;
     private BinTree<Type> right;
 
+    /**
+     * Ein Baum wird erzeugt. Der Baum besitzt keine Teilbäume. Die Wurzel besitzt keinen Inhaltswert.
+     */
     BinTree() {
         // Hier passiert nichts
     }
 
+    /**
+     * Ein Baum wird erzeugt. Der Baum besitzt keine Teilbäume. Die Wurzel erhält den übergebenen Inhalt als
+     * Wert.
+     *
+     * @param inhalt Inhalt der Wurzel
+     */
     BinTree(Type inhalt) {
         setItem(inhalt);
+    }
+
+    /**
+     * Wenn die Wurzel des Baums einen Inhaltswert besitzt, wird der Wert wahr
+     * zurückgegeben, sonst der Wert falsch.
+     *
+     * @return Ob die Wurzel einen Inhaltswert besitzt.
+     */
+    public boolean hasItem() {
+        return this.content != null;
+    }
+
+    /**
+     * Die Operation gibt den Inhaltswert der Wurzel des Baumes zurück.
+     *
+     * @return Inhalt der Wurzel.
+     */
+    public Type getItem() {
+        return this.content;
     }
 
     /**
@@ -39,22 +67,32 @@ public class BinTree<Type> {
     }
 
     /**
-     * Die Operation gibt den Inhaltswert der Wurzel des Baumes zurück.
-     * 
-     * @return Inhalt der Wurzel.
+     * Wenn der Baum keine Teilbäume besitzt, die Wurzel des Baums also ein Blatt
+     * ist, wird der Wert wahr zurückgegeben, sonst der Wert falsch.
+     *
+     * @return Ob der Baum ein Blatt ist.
      */
-    public Type getItem() {
-        return this.content;
+    public boolean isLeaf() {
+        return (!hasLeft()) && (!hasRight());
     }
 
     /**
-     * Wenn die Wurzel des Baums einen Inhaltswert besitzt, wird der Wert wahr
+     * Wenn der Baum einen linken Teilbaum besitzt, wird der Wert wahr
      * zurückgegeben, sonst der Wert falsch.
-     * 
-     * @return Ob die Wurzel einen Inhaltswert besitzt.
+     *
+     * @return Ob der Baum einen linken Teilbaum besitzt.
      */
-    public boolean hasItem() {
-        return this.content != null;
+    public boolean hasLeft() {
+        return this.left != null;
+    }
+
+    /**
+     * Die Operation gibt den linken Teilbaum zurück.
+     *
+     * @return Linker Teilbaum.
+     */
+    public BinTree<Type> getLeft() {
+        return this.left;
     }
 
     /**
@@ -74,22 +112,22 @@ public class BinTree<Type> {
     }
 
     /**
-     * Die Operation gibt den linken Teilbaum zurück.
-     * 
-     * @return Linker Teilbaum.
+     * Wenn der Baum einen rechten Teilbaum besitzt, wird der Wert wahr
+     * zurückgegeben, sonst der Wert falsch.
+     *
+     * @return Ob der Baum einen rechten Teilbaum besitzt.
      */
-    public BinTree<Type> getLeft() {
-        return this.left;
+    public boolean hasRight() {
+        return this.right != null;
     }
 
     /**
-     * Wenn der Baum einen linken Teilbaum besitzt, wird der Wert wahr
-     * zurückgegeben, sonst der Wert falsch.
-     * 
-     * @return Ob der Baum einen linken Teilbaum besitzt.
+     * Die Operation gibt den rechten Teilbaum zurück.
+     *
+     * @return Rechter Teilbaum.
      */
-    public boolean hasLeft() {
-        return this.left != null;
+    public BinTree<Type> getRight() {
+        return this.right;
     }
 
     /**
@@ -106,35 +144,6 @@ public class BinTree<Type> {
      */
     public void deleteRight() {
         this.right = null;
-    }
-
-    /**
-     * Die Operation gibt den rechten Teilbaum zurück.
-     * 
-     * @return Rechter Teilbaum.
-     */
-    public BinTree<Type> getRight() {
-        return this.right;
-    }
-
-    /**
-     * Wenn der Baum einen rechten Teilbaum besitzt, wird der Wert wahr
-     * zurückgegeben, sonst der Wert falsch.
-     * 
-     * @return Ob der Baum einen rechten Teilbaum besitzt.
-     */
-    public boolean hasRight() {
-        return this.right != null;
-    }
-
-    /**
-     * Wenn der Baum keine Teilbäume besitzt, die Wurzel des Baums also ein Blatt
-     * ist, wird der Wert wahr zurückgegeben, sonst der Wert falsch.
-     * 
-     * @return Ob der Baum ein Blatt ist.
-     */
-    public boolean isLeaf() {
-        return (!hasLeft()) && (!hasRight());
     }
 
 }

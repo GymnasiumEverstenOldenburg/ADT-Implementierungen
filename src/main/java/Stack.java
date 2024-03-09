@@ -70,6 +70,17 @@ public class Stack<Type> {
     }
 
     /**
+     * Ein neues Element mit dem übergebenen Inhalt wird oben auf den Stapel gelegt.
+     *
+     * @param inhalt Inhalt des neuen Elements.
+     */
+    public void push(Type inhalt) {
+        Item<Type> newItem = new Item<>(inhalt);
+        newItem.setBelow(this.top);
+        this.top = newItem;
+    }
+
+    /**
      * Das oberste Element des Stapels wird entnommen. Der Inhalt dieses Elements
      * wird zurückgegeben.
      * 
@@ -79,17 +90,6 @@ public class Stack<Type> {
         Type content = top();
         this.top = this.top.getBelow();
         return content;
-    }
-
-    /**
-     * Ein neues Element mit dem übergebenen Inhalt wird oben auf den Stapel gelegt.
-     * 
-     * @param inhalt Inhalt des neuen Elements.
-     */
-    public void push(Type inhalt) {
-        Item<Type> newItem = new Item<>(inhalt);
-        newItem.setBelow(this.top);
-        this.top = newItem;
     }
 
 }

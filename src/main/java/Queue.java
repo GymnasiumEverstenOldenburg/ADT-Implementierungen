@@ -41,7 +41,7 @@ public class Queue<Type> {
     private Item<Type> last = null; // Das letzte Element
 
     /**
-     * Ein leerer Stapel wird angelegt.
+     * Eine leere Schlange wird angelegt.
      */
     public Queue() {
         // Hier passiert nichts
