@@ -17,7 +17,7 @@ public class BinTree<Type> {
     /**
      * Ein Baum wird erzeugt. Der Baum besitzt keine Teilbäume. Die Wurzel besitzt keinen Inhaltswert.
      */
-    BinTree() {
+    public BinTree() {
         // Hier passiert nichts
     }
 
@@ -27,7 +27,7 @@ public class BinTree<Type> {
      *
      * @param inhalt Inhalt der Wurzel
      */
-    BinTree(Type inhalt) {
+    public BinTree(Type inhalt) {
         setItem(inhalt);
     }
 
