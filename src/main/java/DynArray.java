@@ -1,9 +1,11 @@
 package main.java;
 
 /**
- * Implementierung der Klasse DynArray nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
+ * Implementierung der Klasse DynArray nach den Vorgaben des KCs der gymnasialen
+ * Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
+ *         alexander.reimer2357@gmail.com)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
  * @version 09.03.2024
  *
@@ -148,10 +150,25 @@ public class DynArray<Type> {
      * @param index Der Index an dem das Element gelöscht werden soll.
      */
     public void delete(int index) {
+        if (this.length == 0) {
+            throw new IllegalArgumentException("Die dynamische Reihung ist leer!");
+        }
+        if (index == 0) {
+            if (this.length == 1) {
+                this.first = null;
+                this.last = null;
+                this.length = 0;
+                return;
+            }
+            this.first = this.first.getNext();
+            this.length--;
+            return;
+        }
         Item<Type> previous = getItemClass(index - 1);
         Item<Type> current = previous.getNext();
         Item<Type> next = current.getNext();
         previous.setNext(next);
+        this.length--;
     }
 
     /**
