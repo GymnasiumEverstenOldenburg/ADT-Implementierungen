@@ -95,7 +95,7 @@ public class Queue<Type> {
      * 
      * @return Inhalt des vordersten Elements.
      */
-    public Type deqeue() {
+    public Type dequeue() {
         Type content = head();
         this.first = this.first.getNext();
         // Wenn Nachfolger von first null ist, dann war es das letzte Element,
@@ -105,4 +105,5 @@ public class Queue<Type> {
         }
         return content;
     }
+
 }
