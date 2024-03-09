@@ -91,4 +91,5 @@ public class Stack<Type> {
         newItem.setBelow(this.top);
         this.top = newItem;
     }
+
 }
