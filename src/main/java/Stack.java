@@ -5,7 +5,7 @@ package main.java;
  *
  * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
- * @version 06.03.2024
+ * @version 09.03.2024
  *
  */
 public class Stack<Type> {
