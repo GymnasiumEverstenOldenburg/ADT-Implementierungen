@@ -2,7 +2,6 @@ package tests.java;
 
 import main.java.DynArray;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,12 +56,10 @@ public class TestDynArray {
 
     @Test
     @Order(5)
-    @Disabled("Currently Failing")
     public void testDelete() {
         dynArray.append(256);
         dynArray.append(512);
         dynArray.delete(0);
-
         assertEquals(1, dynArray.getLength(), "DynArray length should be 1 after deletion");
         assertEquals(512, dynArray.getItem(0), "Element at index 0 should be the second element after deletion");
     }
