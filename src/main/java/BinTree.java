@@ -27,14 +27,14 @@ public class BinTree<Type> {
      * 
      * @param inhalt Inhalt der Wurzel.
      */
-    void setItem(Type inhalt) {
+    public void setItem(Type inhalt) {
         this.content = inhalt;
     }
 
     /**
      * Die Operation löscht den Inhaltswert der Wurzel des Baums.
      */
-    void deleteItem() {
+    public void deleteItem() {
         this.content = null;
     }
 
@@ -43,7 +43,7 @@ public class BinTree<Type> {
      * 
      * @return Inhalt der Wurzel.
      */
-    Type getItem() {
+    public Type getItem() {
         return this.content;
     }
 
@@ -53,7 +53,7 @@ public class BinTree<Type> {
      * 
      * @return Ob die Wurzel einen Inhaltswert besitzt.
      */
-    boolean hasItem() {
+    public boolean hasItem() {
         return this.content != null;
     }
 
@@ -62,14 +62,14 @@ public class BinTree<Type> {
      * 
      * @param b Neuer linker Teilbaum.
      */
-    void setLeft(BinTree<Type> b) {
+    public void setLeft(BinTree<Type> b) {
         this.left = b;
     }
 
     /**
      * Die Operation löscht den linken Teilbaum.
      */
-    void deleteLeft() {
+    public void deleteLeft() {
         this.left = null;
     }
 
@@ -78,7 +78,7 @@ public class BinTree<Type> {
      * 
      * @return Linker Teilbaum.
      */
-    BinTree<Type> getLeft() {
+    public BinTree<Type> getLeft() {
         return this.left;
     }
 
@@ -88,7 +88,7 @@ public class BinTree<Type> {
      * 
      * @return Ob der Baum einen linken Teilbaum besitzt.
      */
-    boolean hasLeft() {
+    public boolean hasLeft() {
         return this.left != null;
     }
 
@@ -97,14 +97,14 @@ public class BinTree<Type> {
      * 
      * @param b Neuer rechter Teilbaum.
      */
-    void setRight(BinTree<Type> b) {
+    public void setRight(BinTree<Type> b) {
         this.right = b;
     }
 
     /**
      * Die Operation löscht den rechten Teilbaum.
      */
-    void deleteRight() {
+    public void deleteRight() {
         this.right = null;
     }
 
@@ -113,7 +113,7 @@ public class BinTree<Type> {
      * 
      * @return Rechter Teilbaum.
      */
-    BinTree<Type> getRight() {
+    public BinTree<Type> getRight() {
         return this.right;
     }
 
@@ -123,7 +123,7 @@ public class BinTree<Type> {
      * 
      * @return Ob der Baum einen rechten Teilbaum besitzt.
      */
-    boolean hasRight() {
+    public boolean hasRight() {
         return this.right != null;
     }
 
@@ -133,7 +133,7 @@ public class BinTree<Type> {
      * 
      * @return Ob der Baum ein Blatt ist.
      */
-    boolean isLeaf() {
+    public boolean isLeaf() {
         return (!hasLeft()) && (!hasRight());
     }
 
