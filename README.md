@@ -1,5 +1,5 @@
 # ADT Neuimplementierung
-![KC-Version](https://img.shields.io/badge/Stand-09.03.2024-orange)
+![Version](https://img.shields.io/github/last-commit/GymnasiumEverstenOldenburg/KCImplementations/main?label=Stand&color=orange)
 ![KC-Version](https://img.shields.io/badge/Stand_KC-Juni_2021-blue)
 
 Dieses Repository enthält Implementierungen der Abstract Data Types (ADTs) für das [Kerncurriculum](kc/INF_Ergaenzende-Hinweise_GO_2021-1.pdf) (KC) Informatik der gymnasialen Oberstufe in Niedersachsen. 
