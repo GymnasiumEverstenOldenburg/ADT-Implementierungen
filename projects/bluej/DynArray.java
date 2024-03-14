@@ -1,5 +1,3 @@
-package main.java;
-
 /**
  * Implementierung der Klasse DynArray nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *

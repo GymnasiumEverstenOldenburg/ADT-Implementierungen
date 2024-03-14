@@ -1,5 +1,3 @@
-package main.java;
-
 /**
  * Implementierung der Klasse BinTree nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
