@@ -9,3 +9,10 @@ Dieses Repository enthält Implementierungen der Abstract Data Types (ADTs) für
 - [DynArray.java](src/main/java/DynArray.java)
 - [Queue.java](src/main/java/Queue.java)
 - [Stack.java](src/main/java/Stack.java)
+
+## Project Files
+- [BlueJ](projects/bluej/)
+
+## Todo
+- [ ] Implement Maven
+- [ ] Add Javadoc
