@@ -6,8 +6,10 @@ Implementierung folgenden Klassen nach den Vorgaben des KCs der gymnasialen Ober
 - Queue
 - Stack
 
+Aktuelle Versionen dieser Files können auf GitHub gefunden werden.
 
 https://github.com/GymnasiumEverstenOldenburg/KCImplementations
 
-Copyright 2024
+
+Copyright (c) 2024 Alexander Reimer <alexander.reimer2357@gmail.com>, Yannick Weigert <yannick@gelbeinhalb.com>
 https://github.com/GymnasiumEverstenOldenburg/KCImplementations/blob/main/LICENSE
