@@ -1,31 +1,18 @@
-name: Generate Javadoc
+name: Deploy Javadoc
 
 on:
   push:
     branches:
-      - 8-add.docs
+      - main
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'openjdk'
-          
-
-      - name: Build Javadoc
-        run: |
-          javadoc -d docs src/main/java
-
-      - name: Deploy Javadoc
+      - name: Deploy JavaDoc
         uses: MathieuSoysal/Javadoc-publisher.yml@v2.3.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          javadoc-branch: javadoc
-          target-folder: docs
+          javadoc-branch: 8-add-docs
+          java-version: 17
+          target-folder: javadoc 
