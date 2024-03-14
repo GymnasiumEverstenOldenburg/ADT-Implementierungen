@@ -15,4 +15,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           javadoc-branch: 8-add-docs
           java-version: 17
+          distribution: 'openjdk'
           target-folder: javadoc 
