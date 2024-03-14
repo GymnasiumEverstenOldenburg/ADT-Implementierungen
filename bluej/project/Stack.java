@@ -1,33 +1,95 @@
+package main.java;
 
 /**
- * Write a description of class Stack here.
+ * Implementierung der Klasse Stack nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
+ * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
+ * @version 09.03.2024
+ *
  */
-public class Stack
-{
-    // instance variables - replace the example below with your own
-    private int x;
+public class Stack<Type> {
+
+    private static class Item<Type> {
+
+        private Item<Type> below;
+        private Type content;
+
+        public Item(Type content) {
+            setContent(content);
+        }
+
+        public void setContent(Type content) {
+            this.content = content;
+        }
+
+        public Type getContent() {
+            return this.content;
+        }
+
+        public Item<Type> getBelow() {
+            return this.below;
+        }
+
+        public void setBelow(Item<Type> next) {
+            this.below = next;
+        }
+
+    }
+
+    private Item<Type> top = null; // Das oberste Element
 
     /**
-     * Constructor for objects of class Stack
+     * Ein leerer Stapel wird angelegt.
      */
-    public Stack()
-    {
-        // initialise instance variables
-        x = 0;
+    public Stack() {
+        // Hier passiert nichts
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Wenn der Stapel kein Element enthält, wird der Wert wahr zurückgegeben, sonst
+     * der Wert falsch
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return Ob der Stapel leer ist.
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public boolean isEmpty() {
+        return this.top == null;
     }
+
+    /**
+     * Der Inhalt des obersten Elements des Stapels wird zurückgegeben, das Element
+     * aber nicht entnommen.
+     *
+     * @return Inhalt des obersten Elements.
+     */
+    public Type top() {
+        if (isEmpty()) {
+            throw new IllegalArgumentException("Der Stapel ist leer!");
+        }
+        return this.top.getContent();
+    }
+
+    /**
+     * Ein neues Element mit dem übergebenen Inhalt wird oben auf den Stapel gelegt.
+     *
+     * @param inhalt Inhalt des neuen Elements.
+     */
+    public void push(Type inhalt) {
+        Item<Type> newItem = new Item<>(inhalt);
+        newItem.setBelow(this.top);
+        this.top = newItem;
+    }
+
+    /**
+     * Das oberste Element des Stapels wird entnommen. Der Inhalt dieses Elements
+     * wird zurückgegeben.
+     * 
+     * @return Inhalt des obersten Elements.
+     */
+    public Type pop() {
+        Type content = top();
+        this.top = this.top.getBelow();
+        return content;
+    }
+
 }
