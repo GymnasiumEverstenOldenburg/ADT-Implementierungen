@@ -16,8 +16,12 @@ jobs:
 
       - name: Copy Java Files
         run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          
           mkdir -p bluej/project/
           cp -r src/main/java/* bluej/project/
+          
           git add bluej/project/
           git commit -m "Update BlueJ Project Files" || true # Ignore error if no changes
           git push
