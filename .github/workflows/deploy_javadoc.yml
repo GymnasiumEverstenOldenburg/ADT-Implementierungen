@@ -3,7 +3,7 @@ name: Generate Javadoc
 on:
   push:
     branches:
-      - main
+      - 8-add.docs
 
 jobs:
   build:
@@ -16,7 +16,8 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
-          java-version: 17
+          distribution: 'openjdk'
+          
 
       - name: Build Javadoc
         run: |
