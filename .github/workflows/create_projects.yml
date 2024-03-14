@@ -1,0 +1,22 @@
+name: Copy Java Files To BlueJ Project
+
+on:
+  push:
+    paths:
+      - 'src/main/java/**' # Trigger only when changes occur in src/main/java/
+
+jobs:
+  copy_files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Copy Java Files
+        run: |
+          mkdir -p bluej/project/
+          cp -r src/main/java/* bluej/project/
+          git add bluej/project/
+          git commit -m "Update BlueJ Project Files" || true # Ignore error if no changes
+          git push
