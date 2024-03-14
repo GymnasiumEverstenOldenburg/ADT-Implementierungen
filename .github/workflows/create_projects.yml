@@ -19,9 +19,9 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           
-          mkdir -p bluej/project/
-          cp -r src/main/java/* bluej/project/
+          mkdir -p projects/bluej/
+          cp -r src/main/java/* projects/bluej/
           
-          git add bluej/project/
+          git add projects/bluej/
           git commit -m "Update BlueJ Project Files" || true # Ignore error if no changes
           git push
