@@ -1,3 +1,5 @@
+package main.java;
+
 /**
  * Implementierung der Klasse Queue nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
