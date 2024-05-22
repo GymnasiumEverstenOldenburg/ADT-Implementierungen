@@ -7,8 +7,6 @@ package main.java;
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
  * @version 09.03.2024
  *
- *
- * Test commit for BlueJ Package
  */
 public class BinTree<Type> {
 
