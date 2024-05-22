@@ -18,10 +18,19 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          
+        
           mkdir -p projects/bluej/
           cp -r src/main/java/* projects/bluej/
           
+          for file in projects/bluej/*.java; do
+            
+            first_line=$(head -n 1 "$file")
+            
+            if [[ $first_line == package* ]]; then
+              sed -i '1d' "$file"
+            fi
+          done
+          
           git add projects/bluej/
-          git commit -m "Update BlueJ Project Files" || true # Ignore error if no changes
+          git commit -m "Update BlueJ Project Files" || true
           git push
