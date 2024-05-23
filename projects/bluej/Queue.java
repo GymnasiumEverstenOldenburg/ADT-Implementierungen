@@ -6,6 +6,9 @@
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
  * @version 09.03.2024
  *
+ * -- Neuste Version:
+ * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/Queue.java
+ *
  */
 public class Queue<Type> {
 
