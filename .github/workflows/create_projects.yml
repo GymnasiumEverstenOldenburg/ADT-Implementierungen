@@ -33,4 +33,4 @@ jobs:
           
           git add projects/bluej/
           git commit -m "Update BlueJ Project Files" || true
-          git push
+          git push origin HEAD:<main>
