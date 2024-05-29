@@ -21,15 +21,16 @@ jobs:
     - name: Compress project folders
       run: |
         for dir in projects/*; do
-          if [ -d "$dir" ]; then
-            folder_name=$(basename "$dir")
-            zip -r "zip/project-files-${folder_name}.zip" "$dir"
+          folder_name=$(basename "$dir")
+          if [ -d "$dir" ] && [ "$folder_name" != ".zip" ]; then
+            zip -r "projects/.zip/project-files-${folder_name}.zip" "$dir"
           fi
         done
+
     - name: Commit Changes
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git add zip/
+        git add projects/.zip/
         git commit -m "Compress Project Files (#5)" || true
         git push origin HEAD:main
