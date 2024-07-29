@@ -2,7 +2,6 @@ package tests.java;
 
 import main.java.DynArray;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,14 +15,12 @@ public class TestDynArray {
     }
 
     @Test
-    @Order(1)
     public void testEmptyDynArray() {
         assertTrue(dynArray.isEmpty(), "New DynArray should be empty");
         assertEquals(0, dynArray.getLength(), "New DynArray should have length 0");
     }
 
     @Test
-    @Order(2)
     public void testAppend() {
         dynArray.append(128);
         assertFalse(dynArray.isEmpty(), "DynArray should not be empty after appending an element");
@@ -32,7 +29,6 @@ public class TestDynArray {
     }
 
     @Test
-    @Order(3)
     public void testInsertAt() {
         dynArray.append(128);
         dynArray.append(512);
@@ -45,7 +41,6 @@ public class TestDynArray {
     }
 
     @Test
-    @Order(4)
     public void testSetItem() {
         dynArray.append(5);
         dynArray.setItem(0, 1024);
@@ -55,7 +50,6 @@ public class TestDynArray {
     }
 
     @Test
-    @Order(5)
     public void testDeleteFirst() {
         dynArray.append(256);
         dynArray.append(512);
@@ -65,7 +59,6 @@ public class TestDynArray {
     }
 
     @Test
-    @Order(6)
     public void testDeleteLast() {
         dynArray.append(256);
         dynArray.append(512);
@@ -76,7 +69,6 @@ public class TestDynArray {
     }
 
     @Test
-    @Order(7)
     public void testDeleteMiddle() {
         dynArray.append(256);
         dynArray.append(512);
