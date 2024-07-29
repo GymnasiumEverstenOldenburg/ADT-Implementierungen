@@ -30,14 +30,29 @@ public class TestDynArray {
 
     @Test
     public void testInsertAt() {
+        assertThrows(IllegalArgumentException.class, () -> dynArray.insertAt(-1, 100));
+        assertThrows(IllegalArgumentException.class, () -> dynArray.insertAt(1, 100));
+
         dynArray.append(128);
         dynArray.append(512);
+        
+        assertThrows(IllegalArgumentException.class, () -> dynArray.insertAt(-1, 100));
+        assertThrows(IllegalArgumentException.class, () -> dynArray.insertAt(3, 100));
+        
         dynArray.insertAt(1, 256);
 
         assertEquals(3, dynArray.getLength(), "DynArray length should be 3 after inserting");
         assertEquals(128, dynArray.getItem(0), "First element should be unchanged");
         assertEquals(256, dynArray.getItem(1), "Element at index 1 should be 256 after insertion");
         assertEquals(512, dynArray.getItem(2), "Element at index 2 should be unchanged");
+    }
+
+    @Test
+    public void testInsertAtZero() {
+        dynArray.insertAt(0, 32);
+
+        assertEquals(1, dynArray.getLength(), "DynArray length should be 1 after inserting");
+        assertEquals(32, dynArray.getItem(0), "First element should be unchanged");
     }
 
     @Test
