@@ -15,8 +15,8 @@ jobs:
     - name: Set vars
       run: |
         export TZ="Europe/Berlin"
-        echo "ORIGINAL_BRANCH=\"$(git branch --show-current)\"" >> $GITHUB_ENV
-        echo "NEW_BRANCH=\"$(date +%Y.%m.%d_%H-%M-%S)_$(git branch --show-current)_compress\"" >> $GITHUB_ENV
+        echo "ORIGINAL_BRANCH=$(git branch --show-current)" >> $GITHUB_ENV
+        echo "NEW_BRANCH=$(date +%Y.%m.%d_%H-%M-%S)_$(git branch --show-current)_compress" >> $GITHUB_ENV
 
     - name: Setup git
       run: |
