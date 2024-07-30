@@ -11,6 +11,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      
+    - name: Setup git
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        BRANCH_NAME="$(date +%Y.%m.%d_%H-%M-%S)_$(git branch --show-current)_compress"
+        git switch -c $BRANCH_NAME 
+        git push --set-upstream origin $BRANCH_NAME
 
     - name: Install zip utility
       run: sudo apt-get install zip
@@ -29,8 +37,6 @@ jobs:
 
     - name: Commit Changes
       run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
         git add projects/.compressed/
         git commit -m "Compress Project Files" || true
-        git push origin HEAD:main
+        git push
