@@ -45,6 +45,6 @@ jobs:
     
     - name: Create PR
       run: |
-        gh pr create --base $ORIGINAL_BRANCH --head $NEW_BRANCH --title "[AUTOMATED] Add compressed files" --assignee "${{ github.triggering_actor }}"
+        gh pr create --base $ORIGINAL_BRANCH --head $NEW_BRANCH --title "[AUTOMATED] Add compressed files" --body "" --assignee "${{ github.triggering_actor }}"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
