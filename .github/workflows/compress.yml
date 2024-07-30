@@ -28,9 +28,6 @@ jobs:
     - name: Install zip utility
       run: sudo apt-get install zip
 
-    - name: Create zip directory if it doesn't exist
-      run: mkdir -p zip
-
     - name: Compress project folders
       run: |
         for dir in projects/*; do
