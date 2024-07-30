@@ -115,6 +115,10 @@ public class DynArray<Type> {
      * @param inhalt Das Element, das eingefügt werden soll.
      */
     public void insertAt(int index, Type inhalt) {
+        if (index == 0 && this.isEmpty()) {
+            this.append(inhalt);
+            return;
+        }
         Item<Type> previous = getItemClass(index - 1);
         Item<Type> newItem = new Item<>(inhalt);
 
