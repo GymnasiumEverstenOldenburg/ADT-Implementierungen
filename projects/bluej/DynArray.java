@@ -4,7 +4,7 @@
  *
  * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
- * @version 09.03.2024
+ * @version 2024-07-30
  *
  * -- Neuste Version:
  * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/DynArray.java
@@ -114,6 +114,10 @@ public class DynArray<Type> {
      * @param inhalt Das Element, das eingefügt werden soll.
      */
     public void insertAt(int index, Type inhalt) {
+        if (index == 0 && this.isEmpty()) {
+            this.append(inhalt);
+            return;
+        }
         Item<Type> previous = getItemClass(index - 1);
         Item<Type> newItem = new Item<>(inhalt);
 
