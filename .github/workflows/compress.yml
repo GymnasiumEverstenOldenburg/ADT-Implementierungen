@@ -11,26 +11,42 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+    
+    - name: Set vars
+      run: |
+        export TZ="Europe/Berlin"
+        echo "ORIGINAL_BRANCH=$(git branch --show-current)" >> $GITHUB_ENV
+        echo "NEW_BRANCH=$(date +%Y.%m.%d_%H-%M-%S)_$(git branch --show-current)_compress" >> $GITHUB_ENV
+
+    - name: Setup git
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git switch -c $NEW_BRANCH 
+        git push --set-upstream origin $NEW_BRANCH
 
     - name: Install zip utility
       run: sudo apt-get install zip
-
-    - name: Create zip directory if it doesn't exist
-      run: mkdir -p zip
 
     - name: Compress project folders
       run: |
         for dir in projects/*; do
           folder_name=$(basename "$dir")
           if [ -d "$dir" ] && [ "$folder_name" != ".zip" ]; then
+            rm --force "projects/.compressed/project-files-${folder_name}.zip"
             zip -r "projects/.compressed/project-files-${folder_name}.zip" "$dir"
           fi
         done
 
     - name: Commit Changes
       run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
         git add projects/.compressed/
         git commit -m "Compress Project Files" || true
-        git push origin HEAD:main
+        git push
+    
+    - name: Create PR
+      run: |
+        echo $NEW_BRANCH
+        gh pr create --base $ORIGINAL_BRANCH --head $NEW_BRANCH --title "[AUTOMATED] Add compressed files" --body "" --assignee "${{ github.triggering_actor }}"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
