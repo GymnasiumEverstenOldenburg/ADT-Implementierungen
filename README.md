@@ -16,4 +16,3 @@ Dieses Repository enthält Implementierungen der Abstract Data Types (ADTs) für
 ## Todo
 - [ ] Implement Maven
 - [ ] Add Javadoc
-- [ ] Create Releases
