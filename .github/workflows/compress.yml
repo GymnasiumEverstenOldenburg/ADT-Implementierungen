@@ -33,7 +33,7 @@ jobs:
             # get just name of folder from path
             folder_name=$(basename "$dir")
             # get absolute path of target location for zip file
-            output_path=$(readlink -m "projects/.compressed/project-files-${folder_name}.zip")
+            output_path=$(readlink -m "projects/.compressed/adts-${folder_name}.zip")
             # remove existing zip file to avoid keeping deleted files
             rm -f "$output_path"
             # cd to avoid unnecessary nesting of files
