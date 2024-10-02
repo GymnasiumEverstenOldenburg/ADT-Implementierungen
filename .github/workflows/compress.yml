@@ -45,7 +45,7 @@ jobs:
         done
     - name: Commit Changes
       run: |
-        git add .zip/
+        git add projects/.compressed/
         git commit -m "Compress Project Files" || true
         git push
     
