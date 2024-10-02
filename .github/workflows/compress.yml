@@ -11,34 +11,38 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-    
+
     - name: Set vars
       run: |
         export TZ="Europe/Berlin"
         echo "ORIGINAL_BRANCH=$(git branch --show-current)" >> $GITHUB_ENV
         echo "NEW_BRANCH=$(date +%Y.%m.%d_%H-%M-%S)_$(git branch --show-current)_compress" >> $GITHUB_ENV
-
     - name: Setup git
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git switch -c $NEW_BRANCH 
         git push --set-upstream origin $NEW_BRANCH
-
     - name: Install zip utility
       run: sudo apt-get install zip
 
     - name: Compress project folders
       run: |
         for dir in projects/*; do
-          folder_name=$(basename "$dir")
-          if [ -d "$dir" ] && [ "$folder_name" != ".compressed" ]; then
-            rm --force "projects/.compressed/project-files-${folder_name}.zip"
-            # Navigate into the folder and compress the contents only
-            (cd "$dir" && zip -r "../../projects/.compressed/project-files-${folder_name}.zip" .)
+          if [ -d "$dir" ]; then
+            # get just name of folder from path
+            folder_name=$(basename "$dir")
+            # get absolute path of target location for zip file
+            output_path=$(readlink -m "projects/.compressed/adts-${folder_name}.zip")
+            # remove existing zip file to avoid keeping deleted files
+            rm -f "$output_path"
+            # cd to avoid unnecessary nesting of files
+            cd "$dir"
+            zip -r "$output_path" .
+            # cd back to previous dir 
+            cd -
           fi
         done
-
     - name: Commit Changes
       run: |
         git add projects/.compressed/
