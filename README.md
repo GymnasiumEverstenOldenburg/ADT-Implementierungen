@@ -1,6 +1,7 @@
 # ADT Neuimplementierung
 ![Version](https://img.shields.io/github/last-commit/GymnasiumEverstenOldenburg/ADT-Implementierungen/main?label=Stand&color=orange)
-![KC-Version](https://img.shields.io/badge/Stand_KC-Juni_2021-blue)
+![Abitur](https://img.shields.io/badge/Abitur-2025-blue)
+![KC-Version](https://img.shields.io/badge/Stand_KC-August_2022-blue)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/GymnasiumEverstenOldenburg/ADT-Implementierungen/total?label=Downloads)
 
 Dieses Repository enthält Implementierungen der Abstract Data Types (ADTs) für das [Kerncurriculum](kc/InformatikHinweise2025.pdf) (KC) Informatik der gymnasialen Oberstufe in Niedersachsen. Wir haben bisher keine andere einheitliche Java-Implementation gefunden.
