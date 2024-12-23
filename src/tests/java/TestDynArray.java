@@ -53,6 +53,10 @@ public class TestDynArray {
 
         assertEquals(1, dynArray.getLength(), "DynArray length should be 1 after inserting");
         assertEquals(32, dynArray.getItem(0), "First element should be unchanged");
+        
+        // test insertion at index 0 when array not empty
+        dynArray.insertAt(0, 32);
+        assertEquals(2, dynArray.getLength(), "DynArray length should be 2 after inserting");
     }
 
     @Test
