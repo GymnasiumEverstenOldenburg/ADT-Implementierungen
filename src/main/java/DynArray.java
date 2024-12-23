@@ -7,7 +7,7 @@ package main.java;
  * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
  *         alexander.reimer2357@gmail.com)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
- * @version 2024-07-30
+ * @version 2024-12-23
  *
  *          -- Neuste Version:
  *          https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/DynArray.java
