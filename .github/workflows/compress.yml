@@ -12,46 +12,57 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Check branch (fail if main)
+      run: |
+        BRANCH=$(git branch --show-current)
+        if [ "$BRANCH" = "main" ]; then
+          echo "Cannot run this workflow on main branch."
+          exit 1
+        fi
+        echo "ORIGINAL_BRANCH=$BRANCH" >> $GITHUB_ENV
+
     - name: Set vars
       run: |
         export TZ="Europe/Berlin"
-        echo "ORIGINAL_BRANCH=$(git branch --show-current)" >> $GITHUB_ENV
-        echo "NEW_BRANCH=$(date +%Y.%m.%d_%H-%M-%S)_$(git branch --show-current)_compress" >> $GITHUB_ENV
+        echo "NEW_BRANCH=$(date +%Y.%m.%d_%H-%M-%S)_compress" >> $GITHUB_ENV
+
     - name: Setup git
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git switch -c $NEW_BRANCH 
+        git switch -c $NEW_BRANCH
         git push --set-upstream origin $NEW_BRANCH
-    - name: Install zip utility
-      run: sudo apt-get install zip
+
+    - name: Ensure zip is available
+      run: sudo apt-get update && sudo apt-get install -y zip
 
     - name: Compress project folders
       run: |
+        mkdir -p projects/.compressed
         for dir in projects/*; do
           if [ -d "$dir" ]; then
-            # get just name of folder from path
             folder_name=$(basename "$dir")
-            # get absolute path of target location for zip file
+            if [ "$folder_name" = ".compressed" ]; then
+              continue
+            fi
             output_path=$(readlink -m "projects/.compressed/adts-${folder_name}.zip")
-            # remove existing zip file to avoid keeping deleted files
             rm -f "$output_path"
-            # cd to avoid unnecessary nesting of files
-            cd "$dir"
-            zip -r "$output_path" .
-            # cd back to previous dir 
-            cd -
+            (cd "$dir" && zip -r "$output_path" .)
           fi
         done
+
     - name: Commit Changes
       run: |
         git add projects/.compressed/
-        git commit -m "Compress Project Files" || true
+        git commit -m "Compress Project Files" || echo "No changes to commit"
         git push
-    
+
     - name: Create PR
-      run: |
-        echo $NEW_BRANCH
-        gh pr create --base $ORIGINAL_BRANCH --head $NEW_BRANCH --title "[AUTOMATED] Add compressed files" --body "" --assignee "${{ github.triggering_actor }}"
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        base: ${{ env.ORIGINAL_BRANCH }}
+        head: ${{ env.NEW_BRANCH }}
+        title: "[AUTOMATED] Add compressed files"
+        body: "This PR was generated automatically."
+        assignees: ${{ github.triggering_actor }}
