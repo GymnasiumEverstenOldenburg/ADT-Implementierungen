@@ -6,10 +6,10 @@ Implementierung folgenden Klassen nach den Vorgaben des KCs der gymnasialen Ober
 - Queue
 - Stack
 
-Aktuelle Versionen dieser Files können auf GitHub gefunden werden.
+Aktuelle Versionen dieser Dateien können auf GitHub gefunden werden.
 
 https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen
 
 
-Copyright (c) 2024 Alexander Reimer <alexander.reimer2357@gmail.com>, Yannick Weigert <yannick@gelbeinhalb.com>
+Copyright (c) 2025 Alexander Reimer <info@alexreimer.de>, Yannick Weigert <info@yannick-weigert.de>
 https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/LICENSE
