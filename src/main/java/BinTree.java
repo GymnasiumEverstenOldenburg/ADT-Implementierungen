@@ -9,8 +9,8 @@ package main.java;
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
  * @version 2025-09-04
  *
- *          -- Neuste Version:
- *          https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/BinTree.java
+ * -- Neuste Version:
+ * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/BinTree.java
  *
  */
 public class BinTree<Type> {
@@ -20,15 +20,17 @@ public class BinTree<Type> {
     private BinTree<Type> right;
 
     /**
-     * Ein leerer Baum wird erzeugt. Er besitzt keinen Inhalt und keine Teilbäume.
+     * Ein leerer Baum wird erzeugt. Er besitzt keinen Inhalt und keine
+     * Teilbäume.
      */
     public BinTree() {
         // Hier passiert nichts
     }
 
     /**
-     * Ein Baum wird erzeugt. Die Wurzel erhält den übergebenen Inhalt als Wert. Der
-     * Baum besitzt jeweils einen leeren Baum als linken und rechten Teilbaum.
+     * Ein Baum wird erzeugt. Die Wurzel erhält den übergebenen Inhalt als Wert.
+     * Der Baum besitzt jeweils einen leeren Baum als linken und rechten
+     * Teilbaum.
      *
      * @param inhalt Inhalt der Wurzel
      */
@@ -95,7 +97,7 @@ public class BinTree<Type> {
 
     /**
      * Der übergebene Baum wird als linker Teilbaum gesetzt.
-     * 
+     *
      * @param b Neuer linker Teilbaum.
      */
     public void setLeft(BinTree<Type> b) {
