@@ -1,14 +1,16 @@
 package main.java;
 
 /**
- * Implementierung der Klasse BinTree nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
+ * Implementierung der Klasse BinTree nach den Vorgaben des KCs der gymnasialen
+ * Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
+ *         alexander.reimer2357@gmail.com)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
  * @version 2024-03-09
  *
- * -- Neuste Version:
- * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/BinTree.java
+ *          -- Neuste Version:
+ *          https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/BinTree.java
  *
  */
 public class BinTree<Type> {
@@ -18,30 +20,32 @@ public class BinTree<Type> {
     private BinTree<Type> right;
 
     /**
-     * Ein Baum wird erzeugt. Der Baum besitzt keine Teilbäume. Die Wurzel besitzt keinen Inhaltswert.
+     * Ein leerer Baum wird erzeugt. Er besitzt keinen Inhalt und keine Teilbäume.
      */
     public BinTree() {
         // Hier passiert nichts
     }
 
     /**
-     * Ein Baum wird erzeugt. Der Baum besitzt keine Teilbäume. Die Wurzel erhält den übergebenen Inhalt als
-     * Wert.
+     * Ein Baum wird erzeugt. Die Wurzel erhält den übergebenen Inhalt als Wert. Der
+     * Baum besitzt jeweils einen leeren Baum als linken und rechten Teilbaum.
      *
      * @param inhalt Inhalt der Wurzel
      */
     public BinTree(Type inhalt) {
-        setItem(inhalt);
+        this.setItem(inhalt);
+        this.setLeft(new BinTree<Type>());
+        this.setRight(new BinTree<Type>());
     }
 
     /**
-     * Wenn die Wurzel des Baums einen Inhaltswert besitzt, wird der Wert wahr
-     * zurückgegeben, sonst der Wert falsch.
+     * Wenn der Baum ein leerer Baum ist, wird der Wert wahr zurückgegeben,
+     * sonst der Wert falsch.
      *
-     * @return Ob die Wurzel einen Inhaltswert besitzt.
+     * @return Ob der Baum leer ist (weder Inhalt besitzt noch Teilbäume hat)
      */
-    public boolean hasItem() {
-        return this.content != null;
+    public boolean isEmpty() {
+        return this.content == null && this.getLeft() == null && this.getRight() == null;
     }
 
     /**
@@ -54,39 +58,30 @@ public class BinTree<Type> {
     }
 
     /**
-     * Die Wurzel des Baums erhält den übergebenen Inhalt als Wert.
-     * 
-     * @param inhalt Inhalt der Wurzel.
+     * Die Wurzel des Baums erhält den übergebenen Inhalt als Wert. Bei einem
+     * leeren Baum wird zusätzlich als linker und rechter Teilbaum jeweils ein
+     * leerer Baum gesetzt.
+     *
+     * @param inhalt Neuer Inhalt der Wurzel.
      */
     public void setItem(Type inhalt) {
+        if (this.isEmpty()) {
+            this.setLeft(new BinTree<Type>());
+            this.setRight(new BinTree<Type>());
+        }
         this.content = inhalt;
     }
 
     /**
-     * Die Operation löscht den Inhaltswert der Wurzel des Baums.
-     */
-    public void deleteItem() {
-        this.content = null;
-    }
-
-    /**
-     * Wenn der Baum keine Teilbäume besitzt, die Wurzel des Baums also ein Blatt
-     * ist, wird der Wert wahr zurückgegeben, sonst der Wert falsch.
+     * Wenn der Baum jeweils einen leeren Baum als linken und rechten Teilbaum
+     * besitzt, also ein Blatt ist, wird der Wert wahr zurückgegeben, sonst der
+     * Wert falsch.
      *
      * @return Ob der Baum ein Blatt ist.
      */
     public boolean isLeaf() {
-        return (!hasLeft()) && (!hasRight());
-    }
-
-    /**
-     * Wenn der Baum einen linken Teilbaum besitzt, wird der Wert wahr
-     * zurückgegeben, sonst der Wert falsch.
-     *
-     * @return Ob der Baum einen linken Teilbaum besitzt.
-     */
-    public boolean hasLeft() {
-        return this.left != null;
+        return this.getLeft() != null && this.getLeft().isEmpty() 
+            && this.getRight() != null && this.getRight().isEmpty();
     }
 
     /**
@@ -108,23 +103,6 @@ public class BinTree<Type> {
     }
 
     /**
-     * Die Operation löscht den linken Teilbaum.
-     */
-    public void deleteLeft() {
-        this.left = null;
-    }
-
-    /**
-     * Wenn der Baum einen rechten Teilbaum besitzt, wird der Wert wahr
-     * zurückgegeben, sonst der Wert falsch.
-     *
-     * @return Ob der Baum einen rechten Teilbaum besitzt.
-     */
-    public boolean hasRight() {
-        return this.right != null;
-    }
-
-    /**
      * Die Operation gibt den rechten Teilbaum zurück.
      *
      * @return Rechter Teilbaum.
@@ -141,12 +119,16 @@ public class BinTree<Type> {
     public void setRight(BinTree<Type> b) {
         this.right = b;
     }
-
+    
     /**
-     * Die Operation löscht den rechten Teilbaum.
+     * Wenn der Baum jeweils einen leeren Baum als linken und rechten Teilbaum
+     * besitzt, also ein Blatt ist, wird der Wert wahr zurückgegeben, sonst der
+     * Wert falsch.
      */
-    public void deleteRight() {
-        this.right = null;
+    public void setEmpty() {
+        this.setItem(null);
+        this.setLeft(null);
+        this.setRight(null);
     }
-
+    
 }
