@@ -7,7 +7,7 @@ package main.java;
  * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
  *         alexander.reimer2357@gmail.com)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
- * @version 2024-03-09
+ * @version 2025-09-04
  *
  *          -- Neuste Version:
  *          https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/BinTree.java
