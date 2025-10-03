@@ -4,7 +4,7 @@
 ![KC-Version](https://img.shields.io/badge/Stand_KC-Juni_2025-blue)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/GymnasiumEverstenOldenburg/ADT-Implementierungen/total?label=Downloads)
 
-Dieses Repository enthält Implementierungen der Abstract Data Types (ADTs) für das [Kerncurriculum](kc/InformatikHinweiseStand2027.pdf) (KC) Informatik der gymnasialen Oberstufe in Niedersachsen. Wir haben bisher keine andere einheitliche Java-Implementation gefunden.
+Dieses Repository enthält Implementierungen der Abstract Data Types (ADTs) für das [Kerncurriculum](kc/InformatikHinweiseAbitur2027.pdf) (KC) Informatik der gymnasialen Oberstufe in Niedersachsen. Wir haben bisher keine andere einheitliche Java-Implementation gefunden.
 
 ## Implementierte Klassen
 - [BinTree.java](src/main/java/BinTree.java)
