@@ -43,7 +43,7 @@ public class BinTree<Type> {
      * Wenn der Baum ein leerer Baum ist, wird der Wert wahr zurückgegeben,
      * sonst der Wert falsch.
      *
-     * @return Ob der Baum leer ist (weder Inhalt besitzt noch Teilbäume hat)
+     * @return Ob der Baum leer ist (weder Inhalt besitzt, noch Teilbäume hat)
      */
     public boolean isEmpty() {
         return this.content == null && this.getLeft() == null && this.getRight() == null;
