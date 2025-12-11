@@ -4,9 +4,8 @@ package main.java;
  * Implementierung der Klasse DynArray nach den Vorgaben des KCs der gymnasialen
  * Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
- *         alexander.reimer2357@gmail.com)
- * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
+ * @author Yannick Weigert (GitHub: GelbEinhalb, email: mail@yannick-weigert.de)
  * @version 2024-12-23
  *
  * -- Neuste Version:
