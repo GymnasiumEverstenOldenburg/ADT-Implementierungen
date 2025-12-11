@@ -35,8 +35,8 @@ public class BinTree<Type> {
      */
     public BinTree(Type inhalt) {
         this.setItem(inhalt);
-        this.setLeft(new BinTree<Type>());
-        this.setRight(new BinTree<Type>());
+        this.setLeft(new BinTree<>());
+        this.setRight(new BinTree<>());
     }
 
     /**
@@ -67,8 +67,8 @@ public class BinTree<Type> {
      */
     public void setItem(Type inhalt) {
         if (this.isEmpty()) {
-            this.setLeft(new BinTree<Type>());
-            this.setRight(new BinTree<Type>());
+            this.setLeft(new BinTree<>());
+            this.setRight(new BinTree<>());
         }
         this.content = inhalt;
     }
