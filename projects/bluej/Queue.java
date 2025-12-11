@@ -1,9 +1,8 @@
-
 /**
  * Implementierung der Klasse Queue nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
  * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
- * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
+ * @author Yannick Weigert (GitHub: GelbEinhalb, email: mail@yannick-weigert.de)
  * @version 2024-03-09
  *
  * -- Neuste Version:
@@ -52,7 +51,7 @@ public class Queue<Type> {
     /**
      * Wenn die Schlange kein Element enthält, wird der Wert wahr zurückgegeben,
      * sonst der Wert falsch.
-     * 
+     *
      * @return Ob die Schlange leer ist.
      */
     public boolean isEmpty() {
@@ -62,7 +61,7 @@ public class Queue<Type> {
     /**
      * Der Inhalt des vordersten Elements der Schlange wird zurückgegeben, das
      * Element aber nicht entnommen.
-     * 
+     *
      * @return Inhalt des vordersten Elements.
      */
     public Type head() {
@@ -76,7 +75,7 @@ public class Queue<Type> {
     /**
      * Ein neues Element mit dem übergebenen Inhalt wird am Ende der dynamischen
      * Reihung angefügt.
-     * 
+     *
      * @param inhalt Das Element, das hinzugefügt wird.
      */
     public void enqueue(Type inhalt) {
@@ -94,7 +93,7 @@ public class Queue<Type> {
     /**
      * Das vorderste Element wird entnommen. Der Inhalt dieses Elements wird
      * zurückgegeben.
-     * 
+     *
      * @return Inhalt des vordersten Elements.
      */
     public Type dequeue() {

@@ -1,9 +1,8 @@
-
 /**
  * Implementierung der Klasse Stack nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
  * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
- * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
+ * @author Yannick Weigert (GitHub: GelbEinhalb, email: mail@yannick-weigert.de)
  * @version 2024-03-09
  *
  * -- Neuste Version:
@@ -85,7 +84,7 @@ public class Stack<Type> {
     /**
      * Das oberste Element des Stapels wird entnommen. Der Inhalt dieses Elements
      * wird zurückgegeben.
-     * 
+     *
      * @return Inhalt des obersten Elements.
      */
     public Type pop() {
