@@ -1,10 +1,9 @@
 /**
- * Implementierung der Klasse BinTree nach den Vorgaben des KCs der gymnasialen
- * Oberstufe (Niedersachsen).
+ * Implementierung der Klasse BinTree nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email: info@alexreimer.de)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: mail@yannick-weigert.de)
- * @version 2025-09-04
+ * @version 2025-12-11
  *
  * -- Neuste Version:
  * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/BinTree.java
@@ -79,8 +78,8 @@ public class BinTree<Type> {
      * @return Ob der Baum ein Blatt ist.
      */
     public boolean isLeaf() {
-        return this.getLeft() != null && this.getLeft().isEmpty()
-                && this.getRight() != null && this.getRight().isEmpty();
+        return this.getLeft() != null && this.getLeft().isEmpty() 
+            && this.getRight() != null && this.getRight().isEmpty();
     }
 
     /**
@@ -112,13 +111,13 @@ public class BinTree<Type> {
 
     /**
      * Der übergebene Baum wird als rechter Teilbaum gesetzt.
-     *
+     * 
      * @param b Neuer rechter Teilbaum.
      */
     public void setRight(BinTree<Type> b) {
         this.right = b;
     }
-
+    
     /**
      * Der Baum wird zu einem leeren Baum, d. h. er besitzt keinen Inhalt und keine Teilbäume.
      */
@@ -127,5 +126,5 @@ public class BinTree<Type> {
         this.setLeft(null);
         this.setRight(null);
     }
-
+    
 }
