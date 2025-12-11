@@ -3,9 +3,9 @@ package main.java;
 /**
  * Implementierung der Klasse Stack nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email: alexander.reimer2357@gmail.com)
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email: info@alexreimer.de)
  * @author Yannick Weigert (GitHub: GelbEinhalb, email: mail@yannick-weigert.de)
- * @version 2024-03-09
+ * @version 2025-12-11
  *
  * -- Neuste Version:
  * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/Stack.java
