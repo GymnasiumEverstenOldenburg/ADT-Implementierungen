@@ -11,5 +11,5 @@ Aktuelle Versionen dieser Dateien können auf GitHub gefunden werden.
 https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen
 
 
-Copyright (c) 2025 Alexander Reimer <info@alexreimer.de>, Yannick Weigert <info@yannick-weigert.de>
+Copyright (c) 2025 Alexander Reimer <info@alexreimer.de>, Yannick Weigert <mail@yannick-weigert.de>
 https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/LICENSE

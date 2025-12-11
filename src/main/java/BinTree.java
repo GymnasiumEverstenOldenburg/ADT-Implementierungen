@@ -1,13 +1,11 @@
 package main.java;
 
 /**
- * Implementierung der Klasse BinTree nach den Vorgaben des KCs der gymnasialen
- * Oberstufe (Niedersachsen).
+ * Implementierung der Klasse BinTree nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
- *         alexander.reimer2357@gmail.com)
- * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
- * @version 2025-09-04
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email: info@alexreimer.de)
+ * @author Yannick Weigert (GitHub: GelbEinhalb, email: mail@yannick-weigert.de)
+ * @version 2025-12-11
  *
  * -- Neuste Version:
  * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/BinTree.java
@@ -36,15 +34,15 @@ public class BinTree<Type> {
      */
     public BinTree(Type inhalt) {
         this.setItem(inhalt);
-        this.setLeft(new BinTree<Type>());
-        this.setRight(new BinTree<Type>());
+        this.setLeft(new BinTree<>());
+        this.setRight(new BinTree<>());
     }
 
     /**
      * Wenn der Baum ein leerer Baum ist, wird der Wert wahr zurückgegeben,
      * sonst der Wert falsch.
      *
-     * @return Ob der Baum leer ist (weder Inhalt besitzt noch Teilbäume hat)
+     * @return Ob der Baum leer ist (weder Inhalt besitzt, noch Teilbäume hat)
      */
     public boolean isEmpty() {
         return this.content == null && this.getLeft() == null && this.getRight() == null;
@@ -68,8 +66,8 @@ public class BinTree<Type> {
      */
     public void setItem(Type inhalt) {
         if (this.isEmpty()) {
-            this.setLeft(new BinTree<Type>());
-            this.setRight(new BinTree<Type>());
+            this.setLeft(new BinTree<>());
+            this.setRight(new BinTree<>());
         }
         this.content = inhalt;
     }
@@ -123,9 +121,7 @@ public class BinTree<Type> {
     }
     
     /**
-     * Wenn der Baum jeweils einen leeren Baum als linken und rechten Teilbaum
-     * besitzt, also ein Blatt ist, wird der Wert wahr zurückgegeben, sonst der
-     * Wert falsch.
+     * Der Baum wird zu einem leeren Baum, d. h. er besitzt keinen Inhalt und keine Teilbäume.
      */
     public void setEmpty() {
         this.setItem(null);

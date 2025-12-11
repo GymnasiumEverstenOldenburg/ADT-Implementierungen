@@ -1,13 +1,11 @@
 package main.java;
 
 /**
- * Implementierung der Klasse DynArray nach den Vorgaben des KCs der gymnasialen
- * Oberstufe (Niedersachsen).
+ * Implementierung der Klasse DynArray nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
- *         alexander.reimer2357@gmail.com)
- * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
- * @version 2024-12-23
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email: info@alexreimer.de)
+ * @author Yannick Weigert (GitHub: GelbEinhalb, email: mail@yannick-weigert.de)
+ * @version 2025-12-11
  *
  * -- Neuste Version:
  * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/DynArray.java
