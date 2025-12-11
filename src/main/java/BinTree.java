@@ -122,9 +122,7 @@ public class BinTree<Type> {
     }
     
     /**
-     * Wenn der Baum jeweils einen leeren Baum als linken und rechten Teilbaum
-     * besitzt, also ein Blatt ist, wird der Wert wahr zurückgegeben, sonst der
-     * Wert falsch.
+     * Der Baum wird zu einem leeren Baum, d. h. er besitzt keinen Inhalt und keine Teilbäume.
      */
     public void setEmpty() {
         this.setItem(null);
