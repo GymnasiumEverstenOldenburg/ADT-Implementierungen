@@ -1,15 +1,12 @@
-
 /**
- * Implementierung der Klasse DynArray nach den Vorgaben des KCs der gymnasialen
- * Oberstufe (Niedersachsen).
+ * Implementierung der Klasse DynArray nach den Vorgaben des KCs der gymnasialen Oberstufe (Niedersachsen).
  *
- * @author Alexander Reimer (GitHub: Alexander-Reimer, email:
- *         alexander.reimer2357@gmail.com)
- * @author Yannick Weigert (GitHub: GelbEinhalb, email: yannick@gelbeinhalb.com)
- * @version 2024-12-23
+ * @author Alexander Reimer (GitHub: Alexander-Reimer, email: info@alexreimer.de)
+ * @author Yannick Weigert (GitHub: GelbEinhalb, email: mail@yannick-weigert.de)
+ * @version 2025-12-11
  *
- *          -- Neuste Version:
- *          https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/DynArray.java
+ * -- Neuste Version:
+ * https://github.com/GymnasiumEverstenOldenburg/ADT-Implementierungen/blob/main/src/main/java/DynArray.java
  *
  */
 public class DynArray<Type> {
@@ -53,8 +50,8 @@ public class DynArray<Type> {
     }
 
     /**
-     * Traversiere das DynArray bis zum index und gib das entsprechende Item-Objekt
-     * zurück.
+     * Traversiere das DynArray bis zum index und gib das entsprechende
+     * Item-Objekt zurück.
      *
      * @param index (beginnend bei 0)
      * @return Item des DynArrays mit ggb. index.
@@ -82,7 +79,7 @@ public class DynArray<Type> {
 
     /**
      * Der Inhalt des Elements an der Position index wird zurückgegeben.
-     * 
+     *
      * @param index Der Index des Elements.
      * @return Inhalt des Elements an der Position index.
      */
@@ -110,13 +107,12 @@ public class DynArray<Type> {
     }
 
     /**
-     * Ein neues Element mit dem übergebenen Inhalt wird an der Position index in
-     * die dynamische Reihung eingefügt. Das
-     * Element, das sich vorher an dieser Position befunden hat, und alle
-     * nachfolgenden werden nach hinten verschoben.
-     * Entspricht der Wert von index der Länge der dynamischen Reihung, so wird ein
-     * neues Element am Ende der
-     * dynamischen Reihung angefügt.
+     * Ein neues Element mit dem übergebenen Inhalt wird an der Position index
+     * in die dynamische Reihung eingefügt. Das Element, das sich vorher an
+     * dieser Position befunden hat, und alle nachfolgenden werden nach hinten
+     * verschoben. Entspricht der Wert von index der Länge der dynamischen
+     * Reihung, so wird ein neues Element am Ende der dynamischen Reihung
+     * angefügt.
      *
      * @param index  Der Index an dem das Element eingefügt wird.
      * @param inhalt Das Element, das eingefügt werden soll.
@@ -144,7 +140,8 @@ public class DynArray<Type> {
      * Der Inhalt des Elementes an der Position index wird durch den übergebenen
      * Inhalt ersetzt.
      *
-     * @param index  Der Index an dem das existierende Element ersetzt werden soll.
+     * @param index  Der Index an dem das existierende Element ersetzt werden
+     * soll.
      * @param inhalt Das Element, dass das aktuelle Element ersetzten soll.
      */
     public void setItem(int index, Type inhalt) {
@@ -154,8 +151,7 @@ public class DynArray<Type> {
 
     /**
      * Das Element an der Position index wird entfernt. Alle folgenden Elemente
-     * werden um eine Position nach vorne
-     * geschoben.
+     * werden um eine Position nach vorne geschoben.
      *
      * @param index Der Index an dem das Element gelöscht werden soll.
      */
